@@ -118,7 +118,7 @@ FVector ABoidManager::Rule3(ABoidActor* Boid)
 
 FVector ABoidManager::TendToPlace(ABoidActor* Boid)
 {
-	FVector Place = FVector(0,0,900);
+	FVector Place = this->GetActorLocation();
 	return (Place - Boid->GetActorLocation())/100;
 }
 
