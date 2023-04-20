@@ -35,21 +35,23 @@ public:
 	FVector Rule3(ABoidActor * Boid);
 	FVector TendToPlace(ABoidActor * Boid); //TEND TO PLACE
 	void LimitVelocity(ABoidActor * Boid); //TEND TO PLACE
+
+	float DeltaTimeGlobal;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int NumberOfBoids = 30;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Rule1AntiFlock;
+	float Rule1AntiFlock = .3f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Rule2AntiFlock;
+	float Rule2AntiFlock = .2f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Rule3AntiFlock;
+	float Rule3AntiFlock =.01f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	float Rule4AntiFlock;
+	float Rule4AntiFlock = .04f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<class ABoidActor> NewBoidClass;

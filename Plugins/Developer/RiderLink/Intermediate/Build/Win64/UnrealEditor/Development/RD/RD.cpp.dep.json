@@ -1,11 +1,11 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\source\\rd\\rd.cpp",
+        "Source": "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\source\\rd\\rd.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\rd\\definitions.h",
-            "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\source\\rd\\rd.h",
+            "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\rd\\definitions.h",
+            "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\source\\rd\\rd.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\logging\\logmacros.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\containers\\unrealstring.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\coretypes.h",

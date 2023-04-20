@@ -19,9 +19,7 @@ void ABoidManager::BeginPlay()
 void ABoidManager::Tick(float DeltaTime)
 {
 	AActor::Tick(DeltaTime);
-	FVector forward = BoidsInLevel[0]->GetActorForwardVector();
-	//Cast<ABoidActor>(BoidsInLevel[0])->BoidMovement->AddInputVector( BoidsInLevel[0]->GetActorForwardVector() * .001 );
-	
+	DeltaTimeGlobal = DeltaTime;
 	MoveAllBoidsToNewPosition();
 }
 
@@ -40,20 +38,20 @@ void ABoidManager::InitializeBoids()
 		GetWorld()->SpawnActor<ABoidActor>(NewBoidClass, Location, Rotation, ActorSpawnParams);
 		BoidsToSpawn.Add(NewBoidClass);
 	}
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABoidActor::StaticClass(), BoidsInLevel);
+	
 	//Cast<ABoidActor>(BoidsInLevel[0])->BoidMovement->AddInputVector( BoidsInLevel[0]->GetActorLocation() * 100 );
 }
 
 void ABoidManager::MoveAllBoidsToNewPosition()
 {
-    
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABoidActor::StaticClass(), BoidsInLevel);
 	FVector v1,v2,v3,v4;
 	for(int i=0; i< BoidsInLevel.Num();i++)
 	{
-		v1= Rule1AntiFlock * Rule1(Cast<ABoidActor>(BoidsInLevel[i]));
-		v2= Rule2AntiFlock * Rule2(Cast<ABoidActor>(BoidsInLevel[i]));
-		v3= Rule3AntiFlock * Rule3(Cast<ABoidActor>(BoidsInLevel[i]));
-		v4 = Rule4AntiFlock * TendToPlace(Cast<ABoidActor>(BoidsInLevel[i]));
+		v1= Rule1AntiFlock * DeltaTimeGlobal * Rule1(Cast<ABoidActor>(BoidsInLevel[i]));
+		v2= Rule2AntiFlock * DeltaTimeGlobal * Rule2(Cast<ABoidActor>(BoidsInLevel[i]));
+		v3= Rule3AntiFlock * DeltaTimeGlobal * Rule3(Cast<ABoidActor>(BoidsInLevel[i]));
+		v4 = Rule4AntiFlock * DeltaTimeGlobal * TendToPlace(Cast<ABoidActor>(BoidsInLevel[i]));
 		LimitVelocity(Cast<ABoidActor>(BoidsInLevel[i]));
 		UE_LOG(LogTemp, Warning, TEXT("Boid # %d :: v1 : %f %f %f" ),i,v1.X,v1.Y,v1.Z );
 		UE_LOG(LogTemp, Warning, TEXT("Boid # %d :: v2 : %f %f %f" ),i,v2.X,v2.Y,v2.Z );
@@ -120,7 +118,7 @@ FVector ABoidManager::Rule3(ABoidActor* Boid)
 
 FVector ABoidManager::TendToPlace(ABoidActor* Boid)
 {
-	FVector Place = FVector(0,0,300);
+	FVector Place = FVector(0,0,900);
 	return (Place - Boid->GetActorLocation())/100;
 }
 

@@ -1,11 +1,11 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\source\\ridershaderinfo\\ridershaderinfo.cpp",
+        "Source": "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\source\\ridershaderinfo\\ridershaderinfo.cpp",
         "ProvidedModule": "",
         "Includes": [
-            "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\ridershaderinfo\\definitions.h",
-            "h:\\wpi projects\\boids\\plugins\\developer\\riderlink\\source\\ridershaderinfo\\ridershaderinfo.h",
+            "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\intermediate\\build\\win64\\unrealeditor\\development\\ridershaderinfo\\definitions.h",
+            "h:\\wpi projects\\agentbasedsimulation\\plugins\\developer\\riderlink\\source\\ridershaderinfo\\ridershaderinfo.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\modules\\moduleinterface.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\coretypes.h",
             "c:\\program files\\unreal\\ue_5.1\\engine\\source\\runtime\\core\\public\\hal\\platform.h",
